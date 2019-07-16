@@ -15,7 +15,7 @@ PossibleMoveModifier = ['', '2', "'"]
 
 # scramble function
 def generate_scramble():
-    scrambleLength = random.randint(18, 25)
+    scrambleLength = random.randint(20, 30)
     counter = 0
     previousMoveDirectionNum = 6 #outside the length of the possibleMoveDirection
     outputScramble = "" #initialize the output string

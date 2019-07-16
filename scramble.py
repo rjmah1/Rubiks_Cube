@@ -4,8 +4,8 @@ import random
 random.seed()
 
 # create an enum/list to choose values from ie U D L R F B
-PossibleMoveDirection = ['U', 'D', 'L', 'R', 'F', 'B']
-PossibleMoveModifier = ['', '2', "'"]
+Possible_move_direction = ['U', 'D', 'L', 'R', 'F', 'B']
+Possible_move_modifier = ['', '2', "'"]
 
 # function to poll a random number between the possible move sets
 
@@ -15,20 +15,20 @@ PossibleMoveModifier = ['', '2', "'"]
 
 # scramble function
 def generate_scramble():
-    scrambleLength = random.randint(20, 30)
+    scramble_length = random.randint(20, 30)
     counter = 0
-    previousMoveDirectionNum = 6 #outside the length of the possibleMoveDirection
-    outputScramble = "" #initialize the output string
-    while counter <= scrambleLength:
-        currentMoveDirectionNum = random.randint(0, 5)
-        if currentMoveDirectionNum != previousMoveDirectionNum:
-            previousMoveDirectionNum = currentMoveDirectionNum
+    previous_move_direction_num = 6 #outside the length of the possibleMoveDirection
+    output_scramble = "" #initialize the output string
+    while counter <= scramble_length:
+        current_move_direction_num = random.randint(0, 5)
+        if current_move_direction_num != previous_move_direction_num:
+            previous_move_direction_num = current_move_direction_num
             modifier = random.randint(0, 2)
-            outputScramble += PossibleMoveDirection[currentMoveDirectionNum]
-            outputScramble += PossibleMoveModifier[modifier]
-            outputScramble += ' '
+            output_scramble += Possible_move_direction[current_move_direction_num]
+            output_scramble += Possible_move_modifier[modifier]
+            output_scramble += ' '
             counter += 1
-    return outputScramble
+    return output_scramble
 
 
 if __name__ == "__main__":

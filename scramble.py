@@ -21,14 +21,13 @@ def generate_scramble():
     outputScramble = "" #initialize the output string
     while counter <= scrambleLength:
         currentMoveDirectionNum = random.randint(0, 5)
-        if currentMoveDirectionNum == previousMoveDirectionNum:
-            continue
-        previousMoveDirectionNum = currentMoveDirectionNum
-        modifier = random.randint(0, 2)
-        outputScramble += PossibleMoveDirection[currentMoveDirectionNum]
-        outputScramble += PossibleMoveModifier[modifier]
-        outputScramble += ' '
-        counter += 1
+        if currentMoveDirectionNum != previousMoveDirectionNum:
+            previousMoveDirectionNum = currentMoveDirectionNum
+            modifier = random.randint(0, 2)
+            outputScramble += PossibleMoveDirection[currentMoveDirectionNum]
+            outputScramble += PossibleMoveModifier[modifier]
+            outputScramble += ' '
+            counter += 1
     return outputScramble
 
 
